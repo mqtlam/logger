@@ -7,7 +7,7 @@ namespace Logger
 
 	bool Logger::initialized = false;
 	ofstream* Logger::logstream = NULL;
-	LogLevel Logger::minLogLevel = INFO;
+	LogLevel Logger::minLogLevel = LINFO;
 
 	Logger::Logger()
 	{
@@ -46,7 +46,7 @@ namespace Logger
 	void Logger::initialize(string logPath)
 	{
 		// You can change the default minimum logging level here
-		Logger::minLogLevel = INFO;
+		Logger::minLogLevel = LINFO;
 
 		// create new file log stream object
 		Logger::logstream = new ofstream(logPath.c_str(), std::ios_base::app);
@@ -82,7 +82,7 @@ namespace Logger
 	ostringstream& Logger::log()
 	{
 		// You can change the default logging behavior here
-		this->logLevel = INFO;
+		this->logLevel = LINFO;
 		this->outputMode = STD_OUT;
 
 		return os;
@@ -92,7 +92,7 @@ namespace Logger
 	{
 		// You can change here whether to print to stdout or stderr 
 		// depending on the logging level passed
-		if (level >= WARNING)
+		if (level >= LWARNING)
 			return log(level, STD_ERR);
 		else
 			return log(level, STD_OUT);

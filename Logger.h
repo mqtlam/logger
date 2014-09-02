@@ -20,15 +20,16 @@
 
 // END MACROS
 
+/*!
+* Enumeration of all logging levels.
+* Ordered from lowest to largest logging level.
+* Outside of Logger namespace only for convenience.
+*/
+enum LogLevel { LDEBUG=0, LINFO, LWARNING, LERROR };
+
 namespace Logger
 {
 	using namespace std;
-
-	/*!
-	 * Enumeration of all logging levels.
-	 * Ordered from lowest to largest logging level.
-	 */
-	enum LogLevel { DEBUG=0, INFO, WARNING, ERROR };
 	
 	/*!
 	 * Corresponding strings to logging levels enum.
