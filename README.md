@@ -27,29 +27,30 @@ LOG() << "Write to log freely...." << std::endl << std::endl;
 
 // write debug message to log
 // note that it automatically adds endl to the end
-LOG(Logger::DEBUG) << "Debug message. " 
+LOG(LDEBUG) << "Debug message. " 
 	"This should not be printed since default minimum logging level is at INFO.";
 
 // set minimum logging level to DEBUG
 // any message with logging level >= DEBUG will be printed now
-LOG_SET_LEVEL(Logger::DEBUG);
+LOG_SET_LEVEL(LDEBUG);
 
 // write to debug message to log
-LOG(Logger::DEBUG) << "Debug message. "
+LOG(LDEBUG) << "Debug message. "
 	"This should be printed since default minimum logging level is now at DEBUG.";
 
 // write normal message to log
-LOG(Logger::INFO) << "Normal message.";
+LOG(LINFO) << "Normal message.";
 
 // write warning message to log
-LOG(Logger::WARNING) << "Warning message.";
+LOG(LWARNING) << "Warning message.";
 
 // write error message to log
-LOG(Logger::ERROR) << "Error message.";
+LOG(LERROR) << "Error message.";
 
 // must call this before exiting program
 // to release the log file handler
 LOG_FINALIZE();
+
 ```
 
 ## Extensions
